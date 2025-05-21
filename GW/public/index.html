@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bloxmoon</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="scripts/auth.js"></script>
+  <script defer src="scripts/gems.js"></script>
+  <script defer src="scripts/games.js"></script>
+  <script defer src="scripts/chat.js"></script>
+  <script defer src="/firebase-config.js"></script>
+</head>
+<body>
+  <header>
+    <img src="assets/bloxmoon.png" alt="Bloxmoon" class="logo" onclick="goHome()" />
+    <div class="user-info" id="user-info">
+      <img id="avatar" src="assets/avatars/avatar1.png" alt="Avatar" />
+      <span id="username">Guest</span>
+      <button onclick="logout()">Logout</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="profile-section">
+      <h2>Welcome, <span id="profile-username">Guest</span>!</h2>
+      <label for="username-input">Username:</label>
+      <input type="text" id="username-input" placeholder="Enter new name"/>
+      <label for="avatar-select">Avatar:</label>
+      <select id="avatar-select">
+        <option value="avatar1.png">Avatar 1</option>
+        <option value="avatar2.png">Avatar 2</option>
+        <option value="avatar3.png">Avatar 3</option>
+      </select>
+      <button onclick="updateProfile()">Save Profile</button>
+    </section>
+
+    <section id="gems-section">
+      <h3>Your Gems: <span id="gem-count">0</span></h3>
+      <button id="claim-gems" onclick="claimDailyGems()">Claim Daily 50 Gems</button>
+    </section>
+
+    <section id="fake-stats">
+      <h4>🔥 <span id="user-count">538</span> players online</h4>
+    </section>
+
+    <section id="games">
+      <h2>🎮 Games</h2>
+      <div class="game-grid">
+
+        <div class="game-card" onclick="openGame('coinflip')">
+          <img src="assets/coin-heads.png" alt="Coinflip" />
+          <p>Coinflip</p>
+        </div>
+
+        <div class="game-card" onclick="openGame('dice')">
+          <img src="assets/dice/3.png" alt="Dice" />
+          <p>Dice</p>
+        </div>
+
+        <div class="game-card" onclick="openGame('rps')">
+          <img src="assets/rps.png" alt="Rock Paper Scissors" />
+          <p>RPS</p>
+        </div>
+
+        <div class="game-card" onclick="openGame('slots')">
+          <img src="assets/slots.png" alt="Slots" />
+          <p>Slots</p>
+        </div>
+
+        <div class="game-card" onclick="openGame('blackjack')">
+          <img src="assets/blackjack.png" alt="Blackjack" />
+          <p>Blackjack</p>
+        </div>
+
+        <div class="game-card" onclick="openGame('mines')">
+          <img src="assets/mines.png" alt="Mines" />
+          <p>Mines</p>
+        </div>
+
+        <div class="game-card" onclick="openGame('towers')">
+          <img src="assets/towers.png" alt="Towers" />
+          <p>Towers</p>
+        </div>
+
+        <div class="game-card" onclick="openGame('upgrader')">
+          <img src="assets/upgrader.png" alt="Upgrader" />
+          <p>Upgrader</p>
+        </div>
+
+        <div class="game-card" onclick="openGame('roll')">
+          <img src="assets/roll.png" alt="Roll" />
+          <p>Roll</p>
+        </div>
+
+        <div class="game-card" onclick="openGame('casebattles')">
+          <img src="assets/casebattles.png" alt="Case Battles" />
+          <p>Case Battles</p>
+        </div>
+
+        <div class="game-card" onclick="openGame('crossroad')">
+          <img src="assets/crossroad.png" alt="Crossroad" />
+          <p>Crossroad</p>
+        </div>
+
+      </div>
+
+      <div id="game-area"></div>
+    </section>
+
+    <section id="chat">
+      <h2>💬 Chat</h2>
+      <div id="chat-box"></div>
+      <input type="text" id="chat-input" placeholder="Type your message..." />
+      <button onclick="sendMessage()">Send</button>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Bloxmoon. All rights reserved.</p>
+  </footer>
+</body>
+</html>

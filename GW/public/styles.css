@@ -1,0 +1,231 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(180deg, #0c0c1c, #1c1c3c);
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #111;
+  border-bottom: 2px solid #444;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  height: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.logo:hover {
+  transform: scale(1.1);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.user-info img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 2px solid #4facfe;
+}
+.user-info button {
+  padding: 5px 10px;
+  border: none;
+  background: #4facfe;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+.user-info button:hover {
+  background: #00f2fe;
+}
+
+/* MAIN */
+main {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* PROFILE */
+#profile-section {
+  background: #222;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 10px #00f2fe33;
+}
+#profile-section input, #profile-section select {
+  display: block;
+  width: 100%;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  background: #111;
+  border: 1px solid #4facfe;
+  color: #fff;
+  border-radius: 5px;
+}
+
+/* GEMS */
+#gems-section {
+  background: #1a1a2e;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  text-align: center;
+  box-shadow: 0 0 10px #4facfe44;
+}
+#gems-section button {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: #43e97b;
+  background: linear-gradient(90deg, #43e97b, #38f9d7);
+  border: none;
+  border-radius: 8px;
+  color: black;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+#gems-section button:hover {
+  transform: scale(1.05);
+}
+
+/* STATS */
+#fake-stats {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* GAMES */
+#games {
+  margin-bottom: 3rem;
+}
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1.5rem;
+}
+.game-card {
+  background: #111;
+  border: 2px solid #4facfe;
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.game-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px #00f2fe55;
+}
+.game-card img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 0.5rem;
+}
+
+/* CHAT */
+#chat {
+  background: #222;
+  border: 1px solid #444;
+  padding: 1rem;
+  border-radius: 10px;
+}
+#chat-box {
+  height: 200px;
+  overflow-y: auto;
+  background: #111;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+}
+#chat-box p {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+#chat-input {
+  width: 80%;
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #4facfe;
+  background: #1a1a2e;
+  color: white;
+}
+#chat button {
+  padding: 0.6rem 1rem;
+  margin-left: 1rem;
+  background: #4facfe;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* GAME AREA */
+#game-area {
+  margin-top: 2rem;
+  background: #111;
+  padding: 2rem;
+  border-radius: 12px;
+  min-height: 200px;
+  box-shadow: 0 0 12px #4facfe33;
+}
+
+/* FOOTER */
+footer {
+  padding: 1rem;
+  text-align: center;
+  background-color: #111;
+  color: #aaa;
+  font-size: 0.85rem;
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1a1a2e;
+}
+::-webkit-scrollbar-thumb {
+  background: #4facfe;
+  border-radius: 4px;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .game-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+  #chat-input {
+    width: 70%;
+  }
+  .user-info {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
